@@ -1,0 +1,3 @@
+test("empty", () => {
+  expect("").toBe("");
+});

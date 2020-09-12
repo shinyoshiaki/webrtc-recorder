@@ -1,0 +1,22 @@
+{
+  "files.insertFinalNewline": true,
+  "editor.insertSpaces": false,
+  "tslint.autoFixOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "decompressor",
+    "rtp",
+    "srtcp",
+    "struct",
+    "werift",
+    "werift rtp"
+  ],
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.ts",
+    "**/*.webm",
+    "*.webm"
+  ]
+}

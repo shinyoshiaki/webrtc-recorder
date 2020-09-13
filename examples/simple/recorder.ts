@@ -1,7 +1,7 @@
 import { Server } from "ws";
 import { Recorder } from "../../src";
 
-const recorder = new Recorder({});
+const recorder = new Recorder();
 
 process.on("SIGINT", () => {
   recorder.stopAllRecords();

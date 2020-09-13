@@ -22,15 +22,14 @@ export class Recorder extends RTCPeerConnection {
     const record = this.records[id];
     if (!record) throw new Error();
 
-    record.proc.kill("SIGINT");
     record.listens.forEach((v) => v.unSubscribe());
+    record.proc.kill("SIGINT");
 
     delete this.records[id];
   };
 
   stopAllRecords = () => {
     Object.keys(this.records).forEach(this.stopRecord);
-    this.records = {};
   };
 
   recordAV(audioTrack: RtpTrack, videoTrack: RtpTrack, path: string) {
@@ -48,6 +47,8 @@ export class Recorder extends RTCPeerConnection {
 	! rtpopusdepay ! opusparse \
 	! queue ! muxer.audio_0 \
 	qtmux name="muxer" ! filesink location=${path}`);
+
+    proc.stdout.on("data", (data) => console.log(data.toString()));
 
     const listens = [
       videoTrack.onRtp.subscribe((rtp) => {

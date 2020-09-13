@@ -23,6 +23,7 @@
     "fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/**/*.ts",
+    "start": "ts-node --files examples/simple/recorder.ts",
     "test": "yarn type && jest --forceExit",
     "type": "tsc --noEmit -p .",
     "unused": "organize-imports-cli src/*.ts"

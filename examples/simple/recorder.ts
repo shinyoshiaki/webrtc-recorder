@@ -17,7 +17,7 @@ server.on("connection", async (socket) => {
       recorder.addTransceiver("video", "recvonly"),
       recorder.addTransceiver("audio", "recvonly"),
     ].map((transceiver) => transceiver.onTrack.asPromise())
-  ).then(([videoTrack, audioTrack]) => {
+  ).then(([[videoTrack], [audioTrack]]) => {
     recorder.recordAV(audioTrack, videoTrack, "./video.webm");
   });
 

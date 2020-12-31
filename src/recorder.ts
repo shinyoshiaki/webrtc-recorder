@@ -1,8 +1,7 @@
 import { ChildProcess, exec } from "child_process";
 import { createSocket } from "dgram";
 import * as uuid from "uuid";
-import { PeerConfig, RTCPeerConnection } from "werift";
-import { RtpTrack } from "werift/lib/rtc/media/track";
+import { PeerConfig, RTCPeerConnection, RtpTrack } from "werift";
 
 const udp = createSocket("udp4");
 
